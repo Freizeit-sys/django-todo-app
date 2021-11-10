@@ -24,6 +24,8 @@
 				<td>{{ task.title }}</td>
 				<td>{{ task.deadline }}</td>
 				<td><a href="{% url 'todo_detail' task.pk %}">詳細</a></td>
+				<td><a href="{% url 'todo_update' task.pk %}">編集</a></td>
+				<td><a href="{% url 'todo_delete' task.pk %}">削除</a></td>
 			</tr>
 			{% endfor %}
 		</tbody>
