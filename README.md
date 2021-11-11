@@ -1,4 +1,4 @@
-# django-todo-app
+django-todo-app
 ====
 
 Overview
