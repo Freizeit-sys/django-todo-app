@@ -1,35 +1,23 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>TodoList</title>
-</head>
-<body>
-	<h1>Todo List</h1>
+<h1>Todo List</h1>
 
-	<p><a href="{% url 'todo_create' %}">新規作成</a></p>
+<p><a href="{% url 'todo_create' %}">新規作成</a></p>
 
-	<table>
-		<thead>
-			<tr>
-				<th scope="col">title</th>
-				<th scope="col">deadline</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for task in tasks %}
-			<tr>
-				<td>{{ task.title }}</td>
-				<td>{{ task.deadline }}</td>
-				<td><a href="{% url 'todo_detail' task.pk %}">詳細</a></td>
-				<td><a href="{% url 'todo_update' task.pk %}">編集</a></td>
-				<td><a href="{% url 'todo_delete' task.pk %}">削除</a></td>
-			</tr>
-			{% endfor %}
-		</tbody>
-	</table>
-
-</body>
-</html>
+<table>
+	<thead>
+		<tr>
+			<th scope="col">title</th>
+			<th scope="col">deadline</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for task in tasks %}
+		<tr>
+			<td>{{ task.title }}</td>
+			<td>{{ task.deadline }}</td>
+			<td><a href="{% url 'todo_detail' task.pk %}">詳細</a></td>
+			<td><a href="{% url 'todo_update' task.pk %}">編集</a></td>
+			<td><a href="{% url 'todo_delete' task.pk %}">削除</a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
